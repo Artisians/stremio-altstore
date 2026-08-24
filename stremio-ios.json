@@ -1,0 +1,42 @@
+{
+  "name": "Stremio iOS Source",
+  "identifier": "community.stremio.ios.pinned",
+  "subtitle": "A verified AltStore source for Stremio on iPhone and iPad.",
+  "description": "A static AltStore source pinned to a verified Stremio IPA from Stremio's official download server.",
+  "sourceURL": "https://artisians.github.io/stremio-altstore/stremio-ios.json",
+  "apps": [
+    {
+      "name": "Stremio",
+      "bundleIdentifier": "com.stremio.pal",
+      "developerName": "Stremio",
+      "subtitle": "Freedom to stream.",
+      "localizedDescription": "Stremio for iPhone and iPad. The IPA is downloaded directly from Stremio's official server.",
+      "iconURL": "https://www.stremio.com/website/stremio-logo-small.png",
+      "tintColor": "#7055D9",
+      "category": "entertainment",
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "version": "2.0.6",
+      "versionDate": "2026-07-22",
+      "versionDescription": "New desktop-like player and navigation interface on iPadOS.",
+      "downloadURL": "https://dl.strem.io/apple/2.0.6b21/ios/stremio_iOS.ipa",
+      "size": 75942223,
+      "minOSVersion": "13.0",
+      "versions": [
+        {
+          "version": "2.0.6",
+          "buildVersion": "21",
+          "date": "2026-07-22",
+          "localizedDescription": "New desktop-like player and navigation interface on iPadOS.",
+          "downloadURL": "https://dl.strem.io/apple/2.0.6b21/ios/stremio_iOS.ipa",
+          "size": 75942223,
+          "sha256": "3ff786e83de059293d57378a742c4b70d069fa745133b5f909ea0e060dabf10d",
+          "minOSVersion": "13.0"
+        }
+      ]
+    }
+  ],
+  "news": []
+}

@@ -1,0 +1,44 @@
+name: Update Stremio source
+
+on:
+  schedule:
+    - cron: "15 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-stremio-source
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Test updater
+        run: python3 -m unittest -v
+
+      - name: Check for a verified Stremio update
+        run: python3 update_source.py
+
+      - name: Publish verified source update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- stremio-ios.json; then
+            echo "No source update."
+            exit 0
+          fi
+          git config user.name "stremio-source-bot"
+          git config user.email "stremio-source-bot@users.noreply.github.com"
+          git add stremio-ios.json
+          git commit -m "Update verified Stremio source"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin HEAD:main
