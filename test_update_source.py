@@ -44,8 +44,14 @@ class UpdateSourceTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.source = Path(self.temp.name) / "stremio-ios.json"
-        original = Path(__file__).with_name("stremio-ios.json")
-        self.source.write_bytes(original.read_bytes())
+        self.source.write_text(json.dumps({
+            "apps": [{
+                "bundleIdentifier": "com.stremio.pal",
+                "iconURL": "https://www.stremio.com/website/stremio-logo-small.png",
+                "versions": [{"version": "2.0.6", "buildVersion": "21"}],
+            }],
+            "news": [],
+        }))
 
     def tearDown(self):
         self.temp.cleanup()
