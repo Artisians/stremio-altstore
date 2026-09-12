@@ -18,13 +18,23 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "2.0.7",
-      "versionDate": "2026-08-25",
-      "versionDescription": "feat: add download Live Activities on iOS 16.2 and later\nfeat: add in-app storage management for reviewing and clearing cached data\nfeat: add subtitle Live Sync for quickly correcting subtitle timing\nfeat: scroll to the top when the active tab is tapped again\nfeat: add gradient fade edges to the profile picker\nfix: correct toast positioning\nfix: refresh content correctly after selecting a profile\nfix: prevent Discover crashes and resolve the “See All” loading race condition\nfix: prevent downloads from becoming stuck in a frozen state\nfix: resume interrupted downloads when selecting “Retry”\nfix: open the offline copy when a downloaded video URL is selected\nfix: warn when hardware decoding is unavailable and software decoding is used\nfix: correct subtitle offset behavior\nfix: detect external displays when the app initially launches\nfix: hide video content from app-switcher snapshots\nfix: make play and pause respond immediately when the controls are hidden\nfix: improve KSPlayer playback of high-bitrate content\n\n### About Live Activities\n\nDownload Live Activities require iOS 16.2 or later. Due to iOS background-execution restrictions, live progress reporting may pause around 30 seconds after the app enters the background. The download will continue, and the Live Activity will update when it completes or fails.\n\nA future update is planned to support background torrent downloading on iOS 26 and later. On older iOS versions, opening a video in Picture in Picture can keep the app running while a download continues.",
-      "downloadURL": "https://dl.strem.io/apple/2.0.7b22/ios/stremio_iOS.ipa",
-      "size": 78704513,
+      "version": "2.0.8",
+      "versionDate": "2026-09-11",
+      "versionDescription": "feat: Added P2P/torrent downloads with improved persistence and restoration.\nfeat: Added download exporting and sharing with external apps.\nfeat: Added quick access to Downloads from the profile picker.\nfeat: Added live torrent statistics for peers, download speed, and completion.\nfeat: Added vertical swipe controls for brightness and volume.\nfeat: Added visual feedback for double-tap seeking.\nfeat: Added support for Gravatar profile pictures.\nfeat: Added Cinemeta configuration for eligible profiles.\nfeat: Added streaming server cache size and torrent performance settings.\nfeat: Added warnings when system configuration may limit download functionality.\nfix: Fixed tap-to-open and pause actions in Download Live Activities on iOS 17.0 and 17.1.\nfix: Continue Watching now starts playback directly at the saved position instead of seeking twice.\nfix: Fixed automatic subtitle selection and ensured subtitles refresh correctly when switching episodes.\nfix: Fixed a KSPlayer crash when leaving playback on iOS 15 and macOS 12.\nfix: Fixed the bottom navigation bar remaining visible on iOS 17 and earlier.\nfix: Fixed playback when opening videos from Downloads or deep links.\nfix: Improved player startup and local streaming server reliability.\nfix: Improved Picture in Picture compatibility on macOS 27.\n\nWith the release of iOS 27 and Xcode 27, support for macOS 11 and iOS 14 or earlier is no longer possible. iOS 15 and macOS 12 will become the minimum supported versions when support for iPhone Duo begins.",
+      "downloadURL": "https://dl.strem.io/apple/2.0.8b23/ios/stremio_iOS.ipa",
+      "size": 78506200,
       "minOSVersion": "13.0",
       "versions": [
+        {
+          "version": "2.0.8",
+          "buildVersion": "23",
+          "date": "2026-09-11",
+          "localizedDescription": "feat: Added P2P/torrent downloads with improved persistence and restoration.\nfeat: Added download exporting and sharing with external apps.\nfeat: Added quick access to Downloads from the profile picker.\nfeat: Added live torrent statistics for peers, download speed, and completion.\nfeat: Added vertical swipe controls for brightness and volume.\nfeat: Added visual feedback for double-tap seeking.\nfeat: Added support for Gravatar profile pictures.\nfeat: Added Cinemeta configuration for eligible profiles.\nfeat: Added streaming server cache size and torrent performance settings.\nfeat: Added warnings when system configuration may limit download functionality.\nfix: Fixed tap-to-open and pause actions in Download Live Activities on iOS 17.0 and 17.1.\nfix: Continue Watching now starts playback directly at the saved position instead of seeking twice.\nfix: Fixed automatic subtitle selection and ensured subtitles refresh correctly when switching episodes.\nfix: Fixed a KSPlayer crash when leaving playback on iOS 15 and macOS 12.\nfix: Fixed the bottom navigation bar remaining visible on iOS 17 and earlier.\nfix: Fixed playback when opening videos from Downloads or deep links.\nfix: Improved player startup and local streaming server reliability.\nfix: Improved Picture in Picture compatibility on macOS 27.\n\nWith the release of iOS 27 and Xcode 27, support for macOS 11 and iOS 14 or earlier is no longer possible. iOS 15 and macOS 12 will become the minimum supported versions when support for iPhone Duo begins.",
+          "downloadURL": "https://dl.strem.io/apple/2.0.8b23/ios/stremio_iOS.ipa",
+          "size": 78506200,
+          "sha256": "a98c31059825132e64b5ef73e9fd525411803d437f1920a0da73633ebd6d8319",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.7",
           "buildVersion": "22",
@@ -50,11 +60,11 @@
   ],
   "news": [
     {
-      "title": "Stremio 2.0.7 is available",
-      "identifier": "stremio-2-0-7-b22",
-      "caption": "feat: add download Live Activities on iOS 16.2 and later",
+      "title": "Stremio 2.0.8 is available",
+      "identifier": "stremio-2-0-8-b23",
+      "caption": "feat: Added P2P/torrent downloads with improved persistence and restoration.",
       "tintColor": "7055D9",
-      "date": "2026-08-25",
+      "date": "2026-09-11",
       "notify": true,
       "appID": "com.stremio.pal",
       "imageURL": "https://www.stremio.com/website/stremio-logo-small.png"
