@@ -47,7 +47,7 @@ class UpdateSourceTests(unittest.TestCase):
         self.source.write_text(json.dumps({
             "apps": [{
                 "bundleIdentifier": "com.stremio.pal",
-                "iconURL": "https://www.stremio.com/website/stremio-logo-small.png",
+                "iconURL": update_source.ICON_URL,
                 "versions": [{"version": "2.0.6", "buildVersion": "21"}],
             }],
             "news": [],
@@ -67,7 +67,20 @@ class UpdateSourceTests(unittest.TestCase):
         latest = data["apps"][0]["versions"][0]
         self.assertEqual(latest["version"], "2.0.7")
         self.assertEqual(latest["sha256"], hashlib.sha256(ipa).hexdigest())
+        self.assertEqual(data["apps"][0]["iconURL"], update_source.ICON_URL)
         self.assertTrue(data["news"][0]["notify"])
+        self.assertEqual(data["news"][0]["imageURL"], update_source.ICON_URL)
+
+    def test_selects_latest_official_version_regardless_of_order(self):
+        source = json.loads(make_official("2.1.0", "3"))
+        source["apps"][0]["versions"] += [
+            {"version": "2.0.10", "buildVersion": "99"},
+            {"version": "2.1.0", "buildVersion": "2"},
+        ]
+
+        latest = update_source.official_latest(json.dumps(source).encode())
+
+        self.assertEqual((latest["version"], latest["buildVersion"]), ("2.1.0", "3"))
 
     def test_rejects_wrong_bundle(self):
         def fetch(url, limit):

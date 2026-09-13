@@ -15,6 +15,7 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 OFFICIAL_SOURCE_URL = "https://dl.strem.io/apple/altstore/source.json"
 EXPECTED_HOST = "dl.strem.io"
 EXPECTED_BUNDLE = "com.stremio.pal"
+ICON_URL = "https://artisians.github.io/stremio-altstore/stremio-icon.png"
 MAX_SOURCE_BYTES = 1_000_000
 MAX_IPA_BYTES = 500 * 1024 * 1024
 MAX_PLIST_BYTES = 1_000_000
@@ -148,6 +149,7 @@ def update_source(source_path, fetch=fetch_bytes):
         item for item in app["versions"] if version_key(item) != version_key(new_version)
     ]
     app.update({
+        "iconURL": ICON_URL,
         "version": version,
         "versionDate": release_date,
         "versionDescription": description,
@@ -163,7 +165,7 @@ def update_source(source_path, fetch=fetch_bytes):
         "date": release_date,
         "notify": True,
         "appID": EXPECTED_BUNDLE,
-        "imageURL": app["iconURL"],
+        "imageURL": ICON_URL,
     }]
     source_path.write_text(json.dumps(source, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Updated to Stremio {version} build {build}; sha256={new_version['sha256']}")

@@ -2,7 +2,7 @@ name: Update Stremio source
 
 on:
   schedule:
-    - cron: "15 8 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:

@@ -11,7 +11,7 @@
       "developerName": "Stremio",
       "subtitle": "Freedom to stream.",
       "localizedDescription": "Stremio for iPhone and iPad. The IPA is downloaded directly from Stremio's official server.",
-      "iconURL": "https://www.stremio.com/website/stremio-logo-small.png",
+      "iconURL": "https://artisians.github.io/stremio-altstore/stremio-icon.png",
       "tintColor": "#7055D9",
       "category": "entertainment",
       "appPermissions": {
@@ -67,7 +67,7 @@
       "date": "2026-09-11",
       "notify": true,
       "appID": "com.stremio.pal",
-      "imageURL": "https://www.stremio.com/website/stremio-logo-small.png"
+      "imageURL": "https://artisians.github.io/stremio-altstore/stremio-icon.png"
     }
   ]
 }
